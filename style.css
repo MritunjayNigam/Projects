@@ -1,0 +1,45 @@
+
+html, body{
+    height: 100%;
+    width: 100%;
+    font-family: cursive;
+    background-color: #8cd869;
+}
+
+.container{
+    background-color: black;
+    width: 320px;
+    margin: auto;
+    height: 474px;
+    justify-content: center;
+    border-radius: 50px;
+    font-size: 22px;
+}
+
+button{
+    height: 60px;
+    width: 60px;
+    margin: 0 -1px;
+    border: 2px solid black;
+    border-radius:10cap;
+    font-weight: 700;
+    font-size: larger;
+    color: aquamarine;
+    background-color: grey;
+}
+
+.row{
+    margin: 1px 0;
+}
+
+.row input{
+    margin: 0 0 24px 0;
+    padding: 16px 7px;
+    border: 2px solid black;
+    border-radius: 5px;
+    font-size: 19px;
+}
+
+
+
+

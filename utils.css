@@ -1,0 +1,20 @@
+body{
+    width: 100vw;
+    height: 100vh;
+}
+
+.bg-red{
+    background-color: red;
+}
+
+.flex{
+    display: flex;
+}
+
+.felx-col{
+    flex-direction: column;
+}
+
+.item-center{
+    align-items: center;
+}
