@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Martel+Sans:wght@200;300;400;600;700;800;900&family=Playwrite+IT+Moderna:wght@100..400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Sigmar&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+}
+.container{
+    display: flex;
+}
+.slidebar{
+    background-color: rgba(128, 128, 128, 0.979);
+    width: 15vw;
+    height: 100vh;
+}
+.main{
+    /* background-color:bisque ; */
+    width: 85vw;
+}
+.slidebar nav{
+    margin-top: 65px;
+}
+.slidebar nav li{
+    margin: 15px 0px;
+    padding: 12px 35px;
+    list-style: none;
+    font-size: 24px;
+    font-family: sans-serif;
+}
+.slidebar nav li:hover{
+    background-color: rgb(37, 37, 202);
+    color: #fff;
+}
+.slidebar nav a{
+    text-decoration: none;
+    color: black
+}
+.infoContainer{
+    background-color: #fff;
+    width: 75vw;
+    height: 450px;
+    margin: 70px auto;
+    display: flex;
+    justify-content: space-around;
+}
+.devPic >img{
+    height: 100%;
+}
+.devData{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 40px;
+}
+.hello{
+    font-size: 43px;
+    font-family: cursive;
+}
+.name{
+    font-size: 44px;
+    font-family: "Martel Sans", sans-serif;
+    font-weight: bold;
+}
+.about{
+    font-size: 22px;
+    font-family: math;
+}
+.moreabout{
+    margin-top: 10px;
+    font-size: 19px;
+    font-family: math;
+}
+.buttons{
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    width: 225px;
+}
+.buttons button{
+    padding: 8px;
+    border-radius: 18px;
+    background-color: rgb(28, 114, 199);
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    height: 35px;
+    cursor: pointer;
+}
+.buttons a{
+    text-decoration: none;
+}
+.buttons button:hover{
+    background-color: greenyellow;
+    color: black;
+}
