@@ -1,0 +1,64 @@
+.contactform{
+    width: 45vw;
+    margin: 60px auto;
+    background-color: rgba(211, 211, 211, 0.863);
+    height: 470px;
+    padding: 30px 50px;
+    border-radius: 15px;
+    border: 2px solid black;
+}
+.contactform form{
+    width: 45vw;
+    display: flex;
+    flex-direction: column;
+    font-size: 23px;
+}
+.contactform form label{
+    margin-top: 20px;
+    margin-bottom: 4px;
+    margin-left: 6px;
+}
+.contactform form input{
+    height: 28px;
+    border-radius: 6px;
+    font-size: 20px;
+    padding: 4px 14px;
+}
+.btn{
+    width: 95px;
+    border-radius: 10px;
+    color: aliceblue;
+    background-color: rgb(28, 114, 199);
+    height: 26px;
+}
+.btn:hover{
+    background-color: whitesmoke;
+    color: black;
+}
+.agree{
+    margin: 22px 0;
+    display: flex;
+}
+.agree input{
+    margin-right: 14px;
+}
+.heading{
+    display: flex;
+    justify-content: center;
+    font-size: 35px;
+}
+.blog{
+    margin: 40px 25px;
+    width: 73vw;
+    background-color:rgba(222, 233, 120, 0.342) ;
+    padding: 10px 15px;
+}
+.blog h2{
+    margin: 20px 5px;
+}
+.blog button{
+    margin: 15px 0px;
+   
+}
+
+
