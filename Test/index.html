@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Sliding Navbar with Separate Hamburger & Cross</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Hamburger Icon (Hidden initially since sidebar is open) -->
+<div class="hamburger" id="hamburger" onclick="openNav()" style="display: none;">
+    &#9776; <!-- ☰ -->
+</div>
+
+<!-- Sidebar (Starts open by default) -->
+<div class="sidebar active" id="sidebar">
+    <!-- Cross Icon (Inside Sidebar) -->
+    <div class="close-btn" onclick="closeNav()">
+        &#10005; <!-- ✖ -->
+    </div>
+
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

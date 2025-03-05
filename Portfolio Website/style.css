@@ -9,8 +9,10 @@
 }
 .slidebar{
     background-color: rgba(128, 128, 128, 0.979);
-    width: 200px;
+    width: 225px;
     min-height: 100vh;
+    position: relative;
+    transition: transform 0.4s ease;
 }
 .main{
     /* background-color:bisque ; */
@@ -95,5 +97,43 @@
 .current li{
     background-color: rgba(37, 37, 202, 0.575);
     color: whitesmoke;
+}
+.hamburger{
+    position: absolute;
+    top: 6px;
+    left: 7px;
+}
+.hamburger img{
+    cursor: pointer;
+    margin: 2px;
+}
+.slidebar img{
+    position: absolute;
+    right: 4px;
+    top: 6px;
+    cursor: pointer ;
+}
+.hide{
+    transform: translate(-225px, 0px);
+}
+.ham{
+    display: none;
+}
+
+@media (max-width: 768px){
+    .infoContainer{
+        flex-wrap: wrap;        
+    }
+    .slidebar{
+    transform: translate(-225px, 0px);
+    position: absolute;
+    }
+    .main {
+        /* background-color: bisque; */
+        width: 100vw;
+    }
+    .ham{
+        display: block;
+    }
 }
 
