@@ -145,6 +145,12 @@
     }
     .slidebar{
         min-height: 115vh;
+        width: 165px;
+    }
+    .hamburger img {
+        /* cursor: pointer; */
+        margin: 1px;
+        width: 32px;
     }
 }
 
