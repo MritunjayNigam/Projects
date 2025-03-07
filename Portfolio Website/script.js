@@ -16,6 +16,12 @@ document.querySelector(".ham").addEventListener("click", ()=>{
     }
 })
 
+function defaultHideSlidebar(){
+    const ham = document.querySelector(".slidebar");
+    ham.classList.add("hide")
+}
+defaultHideSlidebar()
+
 function hideHam(){
     const ham = document.querySelector(".ham")
     const slidebar = document.querySelector(".slidebar")
@@ -31,19 +37,19 @@ window.addEventListener("resize", hideHam)
 
 
 
-function widthNav(){
-    const element = document.querySelector(".slidebar")
-    const ham = document.querySelector(".ham");
+// function widthNav(){
+//     const element = document.querySelector(".slidebar")
+//     const ham = document.querySelector(".ham");
 
-    if(window.innerWidth <= 768){
-        element.classList.add("hide")
-        ham.style.display="block"
-    }
-    else{
-        element.classList.remove("hide")
-    }
-}
-widthNav()
-window.addEventListener('resize', widthNav);// whenever someone changes width or height of window, run widthNav function
+//     if(window.innerWidth <= 768){
+//         element.classList.add("hide")
+//         ham.style.display="block"
+//     }
+//     else{
+//         element.classList.remove("hide")
+//     }
+// }
+// widthNav()
+// window.addEventListener('resize', widthNav);// whenever someone changes width or height of window, run widthNav function
 
 

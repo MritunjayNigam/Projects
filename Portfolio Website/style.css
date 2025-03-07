@@ -11,12 +11,12 @@
     background-color: rgba(128, 128, 128, 0.979);
     width: 225px;
     min-height: 100vh;
-    position: relative;
+    position: absolute;
     transition: transform 0.4s ease;
 }
 .main{
     /* background-color:bisque ; */
-    width: 85vw;
+    width: 100vw;
 }
 .slidebar nav{
     margin-top: 65px;
@@ -38,7 +38,7 @@
 }
 .infoContainer{
     background-color: #fff;
-    width: 75vw;
+    width: 90vw;
     height: 450px;
     margin: 70px auto;
     display: flex;
@@ -145,4 +145,5 @@
     }
     
 }
+
 
