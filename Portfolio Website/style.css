@@ -122,11 +122,10 @@
 
 @media (max-width: 768px){
     .infoContainer{
-        flex-wrap: wrap;        
+        flex-wrap: wrap;
     }
     .slidebar{
-    transform: translate(-225px, 0px);
-    position: absolute;
+    position: fixed;
     }
     .main {
         /* background-color: bisque; */
@@ -135,5 +134,15 @@
     .ham{
         display: block;
     }
+    .infoContainer{
+    width: 93vw;
+    }
+}
+
+@media (max-width: 425px){
+    .devPic >img {
+        display: none;
+    }
+    
 }
 
