@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Assistant:wght@200..800&family=Big+Shoulders+Inline:opsz,wght@10..72,100..900&family=Martel+Sans:wght@200;300;400;600;700;800;900&family=Playwrite+IT+Moderna:wght@100..400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Sigmar&display=swap');
+
+.martel-sans-extralight {
+    font-family: "Martel Sans", sans-serif;
+    background-color: var(--primary-color);
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    color: var(--secondary-color);
+}
+header{
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    width: 100vw;
+    margin: auto;
+    /* background-color: red; */
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    /* background-color: greenyellow; */
+    width: 85%;
+    height: 110px;
+    margin: auto;
+}
+nav img{
+    margin-top: 10px;
+    margin-left: 19px;
+}
+nav ul{
+    display: flex;
+    /* background-color: red; */
+    margin-top: auto;
+    margin-bottom: 12px;
+    margin-left: auto;
+}
+nav ul li{
+    list-style: none;
+    margin: 0 16px;
+}
+#moon{
+    margin-top: auto;
+}
+.hov{
+    color: orangered;
+    cursor: pointer;
+}
+main{
+    width: 78vw;
+    margin: 110px auto 110px auto;
+    display: flex;
+    min-height: 80vh;
+}
+.container{
+    /* background: red; */
+    width: 100%;
+    margin-top: 120px;
+    display: grid;
+    grid-template-columns: 10fr 9fr;
+}
+.right{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.right img{
+    position: absolute;
+    transform: translate(0, 0); /* Default position */
+    transition: transform 0.5s ease-in-out; /* Smooth both ways */
+}
+.person{
+    z-index: 1;
+}
+.person:hover{
+    transform: translate(5px, 5px);
+    transition: transform 0.5s ease-in-out;
+}
+.person:hover ~ .shape{
+    transform: translate(-5px, 5px);
+    transition: transform 0.5s ease-in-out;
+}
+.highlight{
+    color: orangered;
+}
+.btn{
+    color: white;
+    background-color: black;
+    width: 110px;
+    height: 34px;
+    border-radius: 6px;
+    border: 1px solid white;
+}
+.btn:hover{
+    background-color: orange;
+    color: black;
+    font-weight: 600;
+    border: 1px solid black;
+}
+.left{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 18px;
+}
+.heading{
+    font-size: 60px;
+}
+:root{
+    --primary-color: rgba(211, 211, 211, 0.753);
+    --secondary-color: black;
+}
+
+.dark-theme{
+    --primary-color: black;
+    --secondary-color: white;
+}

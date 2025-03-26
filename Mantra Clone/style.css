@@ -1,0 +1,87 @@
+header{
+    width: 100vw;
+    height: min-content;
+    align-items: center;
+    position: fixed;
+    justify-content: center;
+    box-shadow: 0 4px 12px 0 rgba(0, 0, 0, .05);
+}
+nav{
+    width: 93vw;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    /* align-items: center; */
+}
+nav ul li{
+    list-style: none;
+    padding: 0 10px;
+    font-size: SMALL;
+    FONT-WEIGHT: 600;
+}
+nav ul{
+    align-items: center;
+    margin-left: auto;
+}
+.left img{
+    margin-left: 20px;
+}
+.search-box{
+    width: 470px;
+    height: 35px;
+    border: 0.4px solid rgba(0, 0, 0, 0.247);
+    border-radius: 4px;
+    background-color: rgba(211, 211, 211, 0.548);
+    padding: 0;
+    margin: auto;
+    justify-content: space-between;
+}
+.search-box input{
+    border: none;
+    background-color: rgba(211, 211, 211, 0.548);
+    width: 92%;
+}
+.search-box button{
+    width: 8%;
+    border: none;
+    background-color: rgba(211, 211, 211, 0.548);
+}
+.actions{    
+    border: 1px solid black;
+    width: 184px;
+    height: 40px;    
+    margin: auto;
+
+}
+.small-box{
+    width: 33.33%;
+    border: 1px solid black;
+}
+nav form input[type="search"]:focus{
+    outline: none;
+    background-color: whitesmoke
+}
+nav ul li:hover{
+    border-bottom-style: solid;
+    border-bottom-width: 4px;
+    border-bottom-color:greenyellow ;
+}
+.box{
+    width: 750px;
+    height: 350px;
+    background-color: lavender;
+    margin-left: 160px;
+    display: none;
+}
+
+main{
+    padding-top: 52px;
+}
+.men-box{
+    background-color: aquamarine;
+}
+.women-box{
+    background-color: rgb(92, 158, 92);
+}
+.kids-box{
+    background-color: rgb(41, 91, 182);
+}

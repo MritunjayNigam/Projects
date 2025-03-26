@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email-Validator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="icon">
+                <img src="email.svg" alt="icon" width="40"></img>
+                <span>
+                    iValidate 
+                </span>
+            </div>
+            <ul>
+                <li class="bar home"><a href="#"> Home </a></li>
+                <li class="bar about"><a href="#"> About </a></li>
+                <li class="bar contact"><a href="#"> Contact Us </a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="box home-box"></div>
+    <div class="box about-box"></div>
+    <div class="box contact-box"></div>
+    <main>
+        <div class="container">
+            <h2>Registration Form</h2>
+            <form action="submit.php" method="post">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+                <br><br>
+
+                <label>Gender:</label>
+                <input type="radio" id="male" name="gender" value="male" required>
+                <label for="male">Male</label>
+
+                <input type="radio" id="female" name="gender" value="female" required>
+                <label for="female">Female</label>
+                <br><br>
+
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+        <div class="container">
+            <h2>Your Results</h2>
+            <div id="resultCont">
+                
+            </div>
+        </div>
+    </main>
+    <footer>Copyright | iValidate.com | All Rights Reserved</footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
