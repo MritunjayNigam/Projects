@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="head">
+            <input type="text" name="country" id="country" placeholder="Enter City Name">
+            <button class="send"><img src="images/search.png" id="submit" alt="img"></button>
+        </div>
+        <div class="core">
+            <img src="" alt="image">
+            <h2 class="temp"></h2>
+            <h3 class="city"></h3>
+        </div>
+        <div class="foot">
+            <div class="left sub-box">
+                <img src="images/humidity.png" alt="image" width="40" height="30">
+                <div>
+                    <div class="humidity"></div>
+                    <p>Humidity</p>
+                </div>
+            </div>
+            <div class="right sub-box">
+                <img src="images/wind.png" alt="image" width="40" height="30">
+                <div>
+                    <div class="wind"></div>
+                    <p>Wind Speed</p>
+                </div>
+            </div>
+        </div>
+        <div class="loader"></div>
+        <div class="intro">Welcome to my Weather App! 🙂 <br> Enter your city name!</div>
+    </div>
+    <footer>Made by Mritunjay Nigam 😎🤏🏻</footer>
+    <script src="script.js"></script>
+</body>
+</html>

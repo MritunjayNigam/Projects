@@ -1,42 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather Calculator</title>
+    <title>Music</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/39e06da2a5.js" crossorigin="anonymous"></script>
+
 </head>
+
 <body>
     <div class="container">
-        <div class="head">
-            <input type="text" name="country" id="country" placeholder="Enter City Name">
-            <button class="send"><img src="images/search.png" id="submit" alt="img"></button>
-        </div>
-        <div class="core">
-            <img src="" alt="image">
-            <h2 class="temp"></h2>
-            <h3 class="city"></h3>
-        </div>
-        <div class="foot">
-            <div class="left sub-box">
-                <img src="images/humidity.png" alt="image" width="40" height="30">
-                <div>
-                    <div class="humidity"></div>
-                    <p>Humidity</p>
-                </div>
+        <nav>
+            <div class="circle" id="back">
+                <i class="fa-solid fa-left-long"></i>
             </div>
-            <div class="right sub-box">
-                <img src="images/wind.png" alt="image" width="40" height="30">
-                <div>
-                    <div class="wind"></div>
-                    <p>Wind Speed</p>
-                </div>
+            <div class="circle">
+                <i class="fa-solid fa-bars"></i>
             </div>
-        </div>
-        <div class="loader"></div>
-        <div class="intro">Welcome to my Weather App! 🙂 <br> Enter your city name!</div>
+            <div class="list">
+                <h3>Song List</h3>
+                <ul>
+                    <li style="display: none;">Not Uploaded</li>
+                    <li>Not Uploaded</li>
+                    <li>Not Uploaded</li>
+                    <li>Not Uploaded</li>
+                    <li>Not Uploaded</li>
+                    <li>Not Uploaded</li>
+                    <li>Not Uploaded</li>
+                    <li>Not Uploaded</li>
+                    <li>Not Uploaded</li>
+                </ul>
+            </div>
+        </nav>
+        <main>
+            <div class="frame">
+            </div>
+            <h1>Welcome to My Song App</h1>
+            <p>Enjoy Listening</p>
+        </main>
+        <footer>
+            <audio controls id="song">
+                <source src="" type="audio/mpeg">
+            </audio>
+            <input type="range" value="0" id="progress">
+            <div class="action">
+                <div>
+                    <i class="fa-solid fa-backward"></i>
+                    <i class="fa-solid fa-play" id="play"></i>
+                    <i class="fa-solid fa-forward"></i>
+                </div>
+                <i class="fa-solid fa-volume-high" id="mute"></i>
+                <input type="range" id="vol" min="0" max="1" step="0.1" value="1">
+            </div>
+        </footer>
     </div>
-    <footer>Made by Mritunjay Nigam 😎🤏🏻</footer>
     <script src="script.js"></script>
 </body>
+
 </html>
