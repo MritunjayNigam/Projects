@@ -13,7 +13,7 @@ body {
 .container {
     position: relative;
     margin-top: 100px;
-    background-color: lightblue;
+    background-color: cadetblue;
     width: 320px;
     min-height: 200px;
     padding: 30px 25px;
@@ -104,7 +104,7 @@ main p{
     border: 2px solid black;
     height: min-content;
     border-radius: 20px;
-    background: linear-gradient(to bottom ,rgba(0, 0, 0, 0.685), rgba(0, 255, 149, 0.411) );
+    background: linear-gradient(to bottom ,rgba(0, 0, 0, 0.61), rgba(0, 255, 149, 0.411) );
 }
 
 .action i {
@@ -131,14 +131,10 @@ main p{
 }
 
 #vol {
-    width: 0px;
-    margin-right: auto;
-
-}
-
-#vol:hover {
     width: 90px;
+    margin-right: auto;
     transition: width 0.5s ease;
+
 }
 
 .action>i {

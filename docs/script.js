@@ -32,6 +32,16 @@ mute.addEventListener("click", () => {
     }
 })
 
+vol.addEventListener("input", function () {
+    if (vol.value == 0) {
+        mute.classList.add("fa-volume-xmark");
+        mute.classList.remove("fa-volume-high");
+    } else {
+        mute.classList.add("fa-volume-high");
+        mute.classList.remove("fa-volume-xmark");
+    }
+});
+
 if (song.play()) {
     setInterval(() => {
         progress.value = song.currentTime;
