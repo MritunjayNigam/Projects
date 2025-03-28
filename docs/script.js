@@ -206,6 +206,9 @@ function data() {
             currentIndex++;
             target[currentIndex].click(); // Simulate clicking next song
         }
+        else {
+            alert("This is last song")
+        }
     });
 
     // Backward Button (Previous Song)
@@ -217,7 +220,7 @@ function data() {
             target[currentIndex].click(); // Simulate clicking previous song
         }
         else {
-            alert("This is last song")
+            alert("This is first song")
         }
     });
 }
