@@ -99,34 +99,34 @@ function data() {
             name: "Chinta Kis Baat Ki",
             singer: "Sachet Tandon",
             link: "songs/Chinta Kis Baat Ki Sachet Tandon 320 Kbps.mp3",
-            image: "images/.png"
+            image: "images/4img.png"
         },
 
         {
             name: "Do Me A Favour Lets Play Holi",
             singer: "Utkash Patel",
             link: "songs/Do Me A Favour Lets Play Holi Waqt The Race Against Time 320 Kbps.mp3",
-            image: "images/.png"
+            image: "images/5img.png"
         },
 
         {
             name: "Holi Mein Dhokha Diya",
             singer: "Bhatar Mera",
             link: "songs/pagalworld.com.mx-Bhatar Mera Holi Mein Dhokha Diya Hai.mp3",
-            image: "images/.png"
+            image: "images/6img.png"
         },
 
         {
             name: "Rang De Basanti",
             singer: "Daler Mehndi",
             link: "songs/Rang De Basanti Daler Mehndi 320 Kbps.mp3",
-            image: "images/.png"
+            image: "images/7img.png"
         },
         {
             name: "Salwarwa Lale Lal",
             singer: "Pawan Singh",
             link: "songs/Salwarwa Lale Lal Pawan Singh 320 Kbps.mp3",
-            image: "images/.png"
+            image: "images/8img.png"
         },
 
     ];
@@ -212,19 +212,7 @@ function hideList() {
 }
 hideList()
 
-// function redGreen() {
-//     let progress = document.getElementById("progress")
-//     let play = document.getElementById("play")
-//     console.log("hellor Lordi");
 
-//     if (play.classList.contains("fa-play")) {
-//         progress.classList.add("th");
-//     } else {
-//         progress.classList.remove("th");
-//     }
-
-// }
-// redGreen()
 
 function redGreen() {
     let progress = document.getElementById("progress");
