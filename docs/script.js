@@ -70,6 +70,19 @@ ham.addEventListener("click", () => {
     list.classList.toggle("expand")
 })
 
+//RED GREEN
+function redGreen() {
+    let progress = document.getElementById("progress");
+    let play = document.getElementById("play");
+
+    if (play.classList.contains("fa-play")) {
+        progress.classList.add("th");
+    } else {
+        progress.classList.remove("th");
+    }
+}
+document.getElementById("play").addEventListener("click", redGreen);
+
 
 function data() {
     const storage = [
@@ -189,6 +202,7 @@ function data() {
     forward.addEventListener("click", () => {
         progress.style.display = "block"
         if (currentIndex < storage.length - 1) {
+            progress.classList.remove("th");
             currentIndex++;
             target[currentIndex].click(); // Simulate clicking next song
         }
@@ -198,6 +212,7 @@ function data() {
     backward.addEventListener("click", () => {
         progress.style.display = "block"
         if (currentIndex > 1) {
+            progress.classList.remove("th");
             currentIndex--;
             target[currentIndex].click(); // Simulate clicking previous song
         }
@@ -220,18 +235,5 @@ hideList()
 
 
 
-function redGreen() {
-    let progress = document.getElementById("progress");
-    let play = document.getElementById("play");
-
-    if (play.classList.contains("fa-play")) {
-        progress.classList.add("th");
-    } else {
-        progress.classList.remove("th");
-    }
-}
-
-// Run `redGreen()` every time `#play` is clicked
-document.getElementById("play").addEventListener("click", redGreen);
 
 
