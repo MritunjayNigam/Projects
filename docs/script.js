@@ -53,7 +53,11 @@ async function dictionary() {
 
         // DEFINITION 
 
-        let d = res[0]?.meanings.flatMap(e => e.definitions.map(d => d.definition)).filter(Boolean).map(def => `<li>${def}</li>`).join("")
+        let d = res[0]?.meanings.flatMap(e => e.definitions.map(d => d.definition))
+        .filter(Boolean)
+        .slice(0,5)
+        .map(def => `<li>${def}</li>`).join("")
+        
         document.querySelector(".definition").innerHTML = `<ol>${d}</ol>`
 
         // console.log(res[0]?.meanings[0]?.definitions[0]?.definition || "Not Found");
@@ -69,6 +73,7 @@ async function dictionary() {
             .flatMap(m => m.definitions
                 .map(e => e.example))
             .filter(Boolean)
+            .slice(0,5)
             .map(example => `<li>${example}</li>`)
             .join("")
 

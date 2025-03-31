@@ -137,6 +137,12 @@ main {
     margin: 20px auto;
 }
 
+.output a:hover{
+    scale: 1.03;
+    filter: invert(0.9);
+    
+}
+
 .subhead {
     width: auto;
     background: linear-gradient(45deg, lightblue, pink);
