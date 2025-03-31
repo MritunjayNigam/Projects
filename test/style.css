@@ -1,0 +1,7 @@
+.box {
+    width: 300px;
+    height: 200px;
+    background: linear-gradient(to bottom right, #feb47b,#ff7e5f); /* Gradient from top to bottom */
+    border-radius: 10px; /* Optional: rounded corners */
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); /* Optional: shadow for a stylish look */
+  }
