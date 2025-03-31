@@ -1,242 +1,100 @@
-console.log("hello");
 
-let progress = document.getElementById("progress")
-let play = document.getElementById("play")
-let song = document.getElementById("song")
-let vol = document.getElementById("vol");
+async function dictionary() {
 
-vol.addEventListener("input", () => {
-    song.volume = vol.value
+    word = document.getElementById("word").value;
+    if(word === ""){
+        alert("Enter a word");
+        return;
+    } 
+
+    document.querySelector(".welcome").style.display="none"
+    document.querySelector(".loading").style.display="flex"
+    // document.querySelector("a").style.display="flex"
+    
+
+    let url = `https:api.dictionaryapi.dev/api/v2/entries/en/${word}`;
+    let data = await fetch(url);
+    let res = await data.json();
+    console.log(res);
+
+    
+    document.querySelector(".loading").style.display="none"
+    // document.querySelector("a").style.display="none"
+
+    if (res[0]) {
+
+        document.querySelector(".output").style.display="block"
+        
+
+        // WORD
+        let w = res[0].word;
+        document.querySelector(".word").innerHTML = `Word : ${w}`;
+
+        // AUDIO
+        let audioSrc = res[0].phonetics[0].audio;
+        if (audioSrc) {
+            console.log(audioSrc);
+        } else {
+            console.log("No audio available");
+        }
+
+
+        // URL
+
+        try {
+            let link = res[0]?.sourceUrls?.[0];
+            let anchor = document.querySelector("a");
+            anchor.href = link;
+        } catch (error) {
+            console.log("Error:", error);
+        }
+
+
+
+        // DEFINITION 
+
+        let d = res[0]?.meanings.flatMap(e => e.definitions.map(d => d.definition)).filter(Boolean).map(def => `<li>${def}</li>`).join("")
+        document.querySelector(".definition").innerHTML = `<ol>${d}</ol>`
+
+        // console.log(res[0]?.meanings[0]?.definitions[0]?.definition || "Not Found");
+        // console.log(res[0]?.meanings[1]?.definitions[0]?.definition || "Not Found");
+        // console.log(res[0]?.meanings[2]?.definitions[0]?.definition || "Not Found");
+        // console.log(res[0]?.meanings[2]?.definitions[1]?.definition || "Not Found");
+        // console.log(res[0]?.meanings[2]?.definitions[2]?.definition || "Not Found");
+        // console.log(res[0]?.meanings[2]?.definitions[3]?.definition || "Not Found");
+
+        // EXAMPLES
+
+        let eg = res[0]?.meanings
+            .flatMap(m => m.definitions
+                .map(e => e.example))
+            .filter(Boolean)
+            .map(example => `<li>${example}</li>`)
+            .join("")
+
+        document.querySelector(".sentences").innerHTML = `<ol>${eg}</ol>`
+
+        // console.log(res[0]?.meanings[2]?.definitions[0]?.example || "Not Found");
+        // console.log(res[0]?.meanings[2]?.definitions[1]?.example || "Not Found");
+        // console.log(res[0]?.meanings[2]?.definitions[2]?.example || "Not Found");
+        // console.log(res[0]?.meanings[2]?.definitions[3]?.example || "Not Found");
+
+    }
+    else {
+        alert("Enter a valid world")
+    }
+
+
+
+
+}
+
+document.querySelector("button").addEventListener("click", () => {
+    dictionary()
 })
-
-song.onloadedmetadata = function () {
-    progress.max = song.duration;
-    progress.value = song.currentTime
-}
-
-let mute = document.querySelector("#mute");
-let previousVolume = song.volume;
-mute.addEventListener("click", () => {
-    if (mute.classList.contains("fa-volume-high")) {
-        previousVolume = parseFloat(vol.value);
-        mute.classList.add("fa-volume-xmark");
-        mute.classList.remove("fa-volume-high");
-        vol.value = 0;
-        song.volume = 0;
-    }
-    else if (mute.classList.contains("fa-volume-xmark")) {
-        mute.classList.add("fa-volume-high");
-        mute.classList.remove("fa-volume-xmark")
-        vol.value = previousVolume;
-        song.volume = previousVolume;
+document.querySelector("nav input").addEventListener("keydown", function(event){
+    if(event.key === "Enter"){
+        dictionary();
     }
 })
-
-vol.addEventListener("input", function () {
-    if (vol.value == 0) {
-        mute.classList.add("fa-volume-xmark");
-        mute.classList.remove("fa-volume-high");
-    } else {
-        mute.classList.add("fa-volume-high");
-        mute.classList.remove("fa-volume-xmark");
-    }
-});
-
-if (song.play()) {
-    setInterval(() => {
-        progress.value = song.currentTime;
-    }, 500);
-}
-progress.onchange = function () {
-    song.currentTime = progress.value;
-}
-
-// PAUSE AND PLAY
-play.onclick = function () {
-    if (play.classList.contains("fa-play")) {
-        song.play()
-        play.classList.remove("fa-play")
-        play.classList.add("fa-pause")
-    } else if (play.classList.contains("fa-pause")) {
-        song.pause()
-        play.classList.remove("fa-pause")
-        play.classList.add("fa-play")
-    }
-}
-
-let ham = document.querySelector("nav .circle:nth-child(2)");
-ham.addEventListener("click", () => {
-    const list = document.querySelector(".list");
-    list.classList.toggle("expand")
-})
-
-//RED GREEN
-function redGreen() {
-    let progress = document.getElementById("progress");
-    let play = document.getElementById("play");
-
-    if (play.classList.contains("fa-play")) {
-        progress.classList.add("th");
-    } else {
-        progress.classList.remove("th");
-    }
-}
-document.getElementById("play").addEventListener("click", redGreen);
-
-
-function data() {
-    const storage = [
-        {
-            name: "",
-            singer: "",
-            link: "",
-            image: ""
-        },
-
-        {
-            name: "BamBam",
-            singer: "Srijan Mishra",
-            link: "songs/bambam.mp3",
-            image: "images/1img.png"
-        },
-
-        {
-            name: "Bagar Bam Bam",
-            singer: "Aryan Yadav",
-            link: "songs/Babam Bam - Paradox 320 Kbps.mp3",
-            image: "images/2img.png"
-        },
-
-        {
-            name: "Holi Mein Rangeele",
-            singer: "Mika Singh",
-            link: "songs/Holi Mein Rangeele Mika Singh 320 Kbps.mp3",
-            image: "images/3img.png"
-        },
-
-        {
-            name: "Chinta Kis Baat Ki",
-            singer: "Sachet Tandon",
-            link: "songs/Chinta Kis Baat Ki Sachet Tandon 320 Kbps.mp3",
-            image: "images/4img.png"
-        },
-
-        {
-            name: "Do Me A Favour Lets Play Holi",
-            singer: "Utkash Patel",
-            link: "songs/Do Me A Favour Lets Play Holi Waqt The Race Against Time 320 Kbps.mp3",
-            image: "images/5img.png"
-        },
-
-        {
-            name: "Holi Mein Dhokha Diya",
-            singer: "Bhatar Mera",
-            link: "songs/pagalworld.com.mx-Bhatar Mera Holi Mein Dhokha Diya Hai.mp3",
-            image: "images/6img.png"
-        },
-
-        {
-            name: "Rang De Basanti",
-            singer: "Daler Mehndi",
-            link: "songs/Rang De Basanti Daler Mehndi 320 Kbps.mp3",
-            image: "images/7img.png"
-        },
-        {
-            name: "Salwarwa Lale Lal",
-            singer: "Pawan Singh",
-            link: "songs/Salwarwa Lale Lal Pawan Singh 320 Kbps.mp3",
-            image: "images/8img.png"
-        },
-
-    ];
-
-    const target = Array.from(document.querySelectorAll(".list ul li"));
-    const forward = document.querySelector(".fa-forward");
-    const backward = document.querySelector(".fa-backward");
-    let currentIndex = 0;
-
-    let back = document.getElementById("back");
-    back.addEventListener("click", () => {
-        currentIndex = 0
-        song.src = "";
-        progress.style.display = "none"
-        const list = document.querySelector(".list")
-        list.classList.remove("expand")
-        document.querySelector(".frame").style.backgroundImage = `url('music.png')`;
-
-        play.classList.add("fa-play")
-        play.classList.remove("fa-pause")
-
-        document.querySelector("main h1").innerHTML = "Welcome to My Song App"
-        document.querySelector("main p").innerHTML = "Enjoy Listening"
-    })
-
-    target.forEach((item, index) => {
-        if (index < storage.length) {
-            item.addEventListener("click", () => {
-                progress.style.display = "block"
-                currentIndex = index;
-
-                // SONG
-                song.src = storage[currentIndex].link;
-                play.classList.add("fa-pause");
-                play.classList.remove("fa-play");
-                song.play();
-
-                // TITLE MAIN
-                document.querySelector("main h1").innerHTML = storage[currentIndex].name;
-
-                // SINGER
-                document.querySelector("main p").innerHTML = storage[currentIndex].singer;
-
-                // BACKGROUND
-                document.querySelector(".frame").style.backgroundImage = `url('${storage[currentIndex].image}')`;
-            });
-
-            // SET LIST ITEM TEXT
-            item.innerHTML = storage[index].name;
-        }
-    });
-
-    // Forward Button (Next Song)
-    forward.addEventListener("click", () => {
-        progress.style.display = "block"
-        if (currentIndex < storage.length - 1) {
-            progress.classList.remove("th");
-            currentIndex++;
-            target[currentIndex].click(); // Simulate clicking next song
-        }
-        else {
-            alert("This is last song")
-        }
-    });
-
-    // Backward Button (Previous Song)
-    backward.addEventListener("click", () => {
-        progress.style.display = "block"
-        if (currentIndex > 1) {
-            progress.classList.remove("th");
-            currentIndex--;
-            target[currentIndex].click(); // Simulate clicking previous song
-        }
-        else {
-            alert("This is first song")
-        }
-    });
-}
-
-data();
-
-function hideList() {
-    let main = document.querySelector("footer, main");
-    main.addEventListener("click", () => {
-        const list = document.querySelector(".list")
-        list.classList.remove("expand");
-    })
-}
-hideList()
-
-
-
-
 
