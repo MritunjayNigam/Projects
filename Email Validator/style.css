@@ -51,19 +51,24 @@ nav li:hover a{
     margin: 0 10px;
 }
 .box{
-    border: 1px solid grey;
+    opacity: 0.5;
     border-radius: 6px;
     box-shadow: 20px;
     width: 530px;
-    height: 280px;
+    height: 0px;
+    /* transition: height 0.5s ease; */
     position: absolute;
     right: 35px;
-    display: none;
+    border: none;
+    /* display: none; */
 }
-.home-box:hover,
-.about-box:hover,
-.contact-box:hover {
-    display: block !important;
+.expand{
+    height: 280px;
+    transition: height 0.5s ease-out;
+}
+.box:hover {
+    height: 280px;
+    z-index: 1;
 }
 
 .home-box{

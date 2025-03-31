@@ -3,36 +3,33 @@ function navInfo(){
     a.forEach(e=>{
         if (e.classList.contains("home")) {
             e.addEventListener("mouseover",()=>{
-                document.querySelector(".home-box").style.display="block"
+                document.querySelector(".home-box").classList.add("expand")
             })
             e.addEventListener("mouseout",()=>{
-                document.querySelector(".home-box").style.display="none"
+                document.querySelector(".home-box").classList.remove("expand")
             })
         }
         else if (e.classList.contains("about")) {
             e.addEventListener("mouseover",()=>{
-                document.querySelector(".about-box").style.display="block"
+                document.querySelector(".about-box").classList.add("expand")
             })
             e.addEventListener("mouseout",()=>{
-                document.querySelector(".about-box").style.display="none"
+                document.querySelector(".about-box").classList.remove("expand")
             })
         }
         if (e.classList.contains("contact")) {
             e.addEventListener("mouseover",()=>{
-                document.querySelector(".contact-box").style.display="block"
+                document.querySelector(".contact-box").classList.add("expand")
             })
             e.addEventListener("mouseout",()=>{
-                document.querySelector(".contact-box").style.display="none"
+                document.querySelector(".contact-box").classList.remove("expand")
             })
         }
     })
-
+    document.querySelector(".box")
 }
 navInfo()
 
-
-key = "ema_live_dPRQf5XUe9uPBgnlAox1HinzNNM9z2Ty9ZADWNH8"
-let url = "https://api.emailvalidation.io/v1/info?apikey=${key}&email=&{email}"
 
 let result = {
     "tag": "",
@@ -51,9 +48,21 @@ let result = {
     "did_you_mean": "",
     "format_valid": true
 }
-let str = ""
-for(let key of Object.keys(result)){
-    str = str + `<p>${key}: ${result[key]}</p>`
+
+async function emailValidation() {
+    let email = document.getElementById("email").value;
+    // let email = "mritunjaynigam700@gmail.com";
+    let key = "ema_live_dPRQf5XUe9uPBgnlAox1HinzNNM9z2Ty9ZADWNH8"
+    let url = `https://api.emailvalidation.io/v1/info?apikey=${key}&email=${email}`
+    const report = await fetch(url);
+    const result = await report.json()
+    console.log(result)
+    let str = ""
+    for(let key of Object.keys(result)){
+        str = str + `<h2>${key}:</h2> <p> ${result[key]}</p>`
+    }
+    resultCont.innerHTML =  str
 }
-resultCont.innerHTML =  str
+document.getElementById("btn").onclick = emailValidation;
+
 
