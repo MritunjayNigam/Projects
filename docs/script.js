@@ -6,7 +6,7 @@ async function dictionary() {
         alert("Enter a word");
         return;
     } 
-
+    document.querySelector(".output").style.display="none"
     document.querySelector(".welcome").style.display="none"
     document.querySelector(".loading").style.display="flex"
     // document.querySelector("a").style.display="flex"
@@ -57,7 +57,7 @@ async function dictionary() {
         .filter(Boolean)
         .slice(0,5)
         .map(def => `<li>${def}</li>`).join("")
-        
+
         document.querySelector(".definition").innerHTML = `<ol>${d}</ol>`
 
         // console.log(res[0]?.meanings[0]?.definitions[0]?.definition || "Not Found");
