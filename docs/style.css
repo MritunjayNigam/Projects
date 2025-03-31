@@ -148,6 +148,12 @@ main {
 .content {
     padding: 15px 35px;
 }
+main,
+    .output,
+    .welcome,
+    .loading {
+        min-height: 78vh;
+    }
 
 @media (max-width: 425px) {
     nav input {
