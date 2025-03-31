@@ -165,12 +165,14 @@ main,
     min-height: 78vh;
 }
 
-.speach {
+.pro{
     color: black;
     padding: 25px 0;
     margin: auto;
     width: max-content;
     display: block;
+    font-size: 21px;
+    font-weight: 800;
 }
 
 @media (max-width: 425px) {
