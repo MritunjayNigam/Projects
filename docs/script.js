@@ -64,7 +64,8 @@ async function dictionary() {
 
         let d = res[0]?.meanings.flatMap(e => e.definitions.map(d => d.definition))
         .filter(Boolean)
-        .slice(0,5)
+        .sort(()=>Math.random() - 0.5)
+        .slice(0,4)
         .map(def => `<li>${def}</li>`).join("")
 
         document.querySelector(".definition").innerHTML = `<ol>${d}</ol>`
@@ -82,7 +83,8 @@ async function dictionary() {
             .flatMap(m => m.definitions
                 .map(e => e.example))
             .filter(Boolean)
-            .slice(0,5)
+            .sort(()=>Math.random() - 0.5)
+            .slice(0,3)
             .map(example => `<li>${example}</li>`)
             .join("")
 
