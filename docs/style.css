@@ -27,6 +27,7 @@ nav {
     grid-template-columns: 10fr 3fr;
     position: fixed;
     top: 0;
+    box-shadow: 3px 0px 12px black;
 }
 
 nav label {
@@ -90,13 +91,12 @@ main {
 
 .loading {
     background-color: #0f83a0;
-    height: 80vh;
+    min-height: 80vh;
     width: 100%;
     display: none;
-    align-items: center;
     justify-content: center;
-    font-size: 30px;
-    font-weight: 600;
+    align-items: center;
+    font-size: 22px;
 }
 
 .welcome {
@@ -160,11 +160,12 @@ main {
         margin: auto;
     }
 
+
     main,
     .output,
     .welcome,
     .loading {
-        min-height: 65vh;
+        min-height: 62vh;
     }
 
     .output {

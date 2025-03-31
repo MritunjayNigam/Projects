@@ -82,6 +82,8 @@ async function dictionary() {
     }
     else {
         alert("Enter a valid world")
+        document.querySelector(".loading").style.display="none"
+        document.querySelector(".welcome").style.display="flex"
     }
 
 
