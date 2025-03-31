@@ -39,6 +39,7 @@ nav label {
     font-size: xx-large;
     font-weight: 600;
     margin: 12px auto 1px;
+    text-shadow: 2px 2px 5px gray;
 }
 
 nav input {
@@ -139,10 +140,10 @@ main {
     margin: 20px auto;
 }
 
-.output a:hover{
+.output a:hover {
     scale: 1.03;
     filter: invert(0.9);
-    
+
 }
 
 .subhead {
@@ -156,12 +157,21 @@ main {
 .content {
     padding: 15px 35px;
 }
+
 main,
-    .output,
-    .welcome,
-    .loading {
-        min-height: 78vh;
-    }
+.output,
+.welcome,
+.loading {
+    min-height: 78vh;
+}
+
+.speach {
+    color: black;
+    padding: 25px 0;
+    margin: auto;
+    width: max-content;
+    display: block;
+}
 
 @media (max-width: 425px) {
     nav input {
@@ -198,7 +208,7 @@ main,
         width: auto;
     }
 
-        footer h2 {
-            font-size: large;
-        }
+    footer h2 {
+        font-size: large;
     }
+}

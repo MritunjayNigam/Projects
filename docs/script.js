@@ -31,12 +31,21 @@ async function dictionary() {
         document.querySelector(".word").innerHTML = `Word : ${w}`;
 
         // AUDIO
-        // let audioSrc = res[0].phonetics[0].audio;
-        // if (audioSrc) {
-        //     console.log(audioSrc);
-        // } else {
-        //     console.log("No audio available");
-        // }
+        let audioSrc = res[0].phonetics[0].audio;
+        if (audioSrc) {
+            let audioElement = document.querySelector("audio");
+            document.querySelector("audio source").src = audioSrc;
+            audioElement.load();
+            console.log(audioSrc);
+
+            document.querySelector(".speach").addEventListener("click",()=>{
+                audioElement.play();
+            })
+
+        } else {
+            document.querySelector(".speach").style.display="none";
+            console.log("No audio available");
+        }
 
 
         // URL
