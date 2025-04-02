@@ -3,6 +3,10 @@
     padding: 0;
 }
 
+body{
+    min-height: 500px;
+}
+
 nav h1 {
     width: max-content;
     margin: auto;
@@ -13,13 +17,14 @@ nav h1 {
 nav {
     align-items: center;
     display: flex;
-    background-color: rgb(76, 147, 189);
+    background-color: #1e3b8ae5;
     height: 90px;
+    box-shadow: 5px 4px 6px black;
 }
 
 main {
     min-height: 80vh;
-    background-color: #dbcfc7;
+    background-color: #F3F4F6;
     overflow: hidden;
 }
 
@@ -105,30 +110,29 @@ footer {
 }
 
 @media (max-width : 425px) {
-    body{
-        min-height: auto;
-    }
-
     .container {
         width: 100%;
         margin: 20px 0;
         padding: 0;
         display: grid;
+        gap: 18px;
         grid-template-areas: "label label button"
             "input input button"
             "bottom bottom bottom";
     }
 
     .container input {
-        width: 90%;
+        width: 85%;
+        height: 38px;
         grid-area: input;
-        margin: auto;
+        margin-left: auto;
     }
 
     .btn {
         height: 85%;
+        background: linear-gradient(45deg, rgba(0, 0, 255, 0.616), rgba(0, 255, 0, 0.432));
         width: 90%;
-        margin: auto;
+        margin-right: auto;
         padding: 0 20px;
         grid-area: button;
         grid-row-end: 3;
@@ -142,22 +146,23 @@ footer {
         padding: 0 30px;
         border-radius: 14px;
         text-align: center;
-        background: linear-gradient(45deg, rgba(0, 0, 255, 0.753), rgba(0, 255, 0, 0.699));
+        background: linear-gradient(45deg, rgba(0, 0, 255, 0.616), rgba(0, 255, 0, 0.432));
         color: purple;
-        font-size: 20px;
-        font-weight: 600;
+        font-size: 23px;
+        font-weight: 800;
         border: none;
         box-shadow: 2px 2px 6px black;
+        margin-top: 22px;
     }
 
     .container label {
-        font-size: 25px;
+        font-size: 28px;
         grid-area: label;
-        margin: auto;
+        margin-left: auto;
     }
 
     .board {
-        width: 80%;
+        width: 285px;
         grid-column-start: 1;
         grid-column-end: -1;
         grid-area: bottom;

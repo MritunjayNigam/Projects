@@ -16,13 +16,22 @@ async function quotesGenerator(){
     console.log(report)
 
     let quote = report.quote;
-    let aurthr =  report.author;
+    let aurthor =  report.author;
+    let quoteID = report.id;
 
-    
-    document.querySelector(".board").innerText = `"${quote}"`
+
+    let board = document.querySelector(".board");
+    //ID
+    board.innerHTML = `Quote ID :${quoteID}`;
+      
+    //QUOTE
+    let qu = document.createElement("p");
+    qu.innerText = `"${quote}"`
+    board.appendChild(qu) 
+    //AUTTHOR
     let p =document.createElement("p");  
-    p.innerText = `By - "${aurthr}"`;
-    document.querySelector(".board").appendChild(p);
+    p.innerText = `By - "${aurthor}"`;
+    board.appendChild(p);
 }
 
 async function randomQuotesGenerator() {
@@ -36,12 +45,21 @@ async function randomQuotesGenerator() {
     console.log(report)
 
     let quote = report.quote;
-    let aurthr =  report.author;
+    let aurthor =  report.author;
+    let quoteID = report.id;
 
-    document.querySelector(".board").innerText = `"${quote}"`
+    let board = document.querySelector(".board");
+    //ID
+    board.innerHTML = `Quote ID :${quoteID}`;
+      
+    //QUOTE
+    let qu = document.createElement("p");
+    qu.innerText = `"${quote}"`
+    board.appendChild(qu) 
+    //AUTTHOR
     let p =document.createElement("p");  
-    p.innerText = `By - "${aurthr}"`;
-    document.querySelector(".board").appendChild(p);
+    p.innerText = `By - "${aurthor}"`;
+    board.appendChild(p);
 
 }
 
