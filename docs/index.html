@@ -1,49 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dictionary</title>
-    <script src="https://kit.fontawesome.com/39e06da2a5.js" crossorigin="anonymous"></script>
+    <title>Quotes</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
-<body class="martel-sans-semibold">
+<body>
     <nav>
-        <label>Search Your Word </label>
-        <input type="text" id="word" placeholder="Search">
-        <button id="btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+        <h1>Quoteg generetor</h1>
     </nav>
 
     <main>
-        <div class="welcome">
-            <h1>
-                Welcome to my Dictionary 🙂 <br> Search for word in search box !
-            </h1>
+        <div class="container">
+            <label>Quote Number </label>
+            <input type="number" placeholder="Enter QuoteNumber between 1 to 30">
+            <button class="btn">Submit</button>
+            <div class="board">Your Quote Will Apear Here!🙂😊</div>
         </div>
-        <div class="loading"> Loading..., Please wait! 🙂</div>
-        <div class="output">
-            <h2 class="word"></h2>
-            <span class="pro">Pronounce 👉 <i class="speach fa-solid fa-volume-high fa-xl"></i>
-            </span>
-            <p class="subhead">Meaning :</p>
-            <p class="content definition"></p>
-            <p class="subhead">Sentences/Examples :</p>
-            <p class="content sentences"></p>
-            <a href="" target="_blank">Go to Source</a>
-        </div>
-        <audio>
-            <source src="" type="audio/mpeg">
-        </audio>
+        <button class="currentBtn">Generate Random Number</button>
     </main>
-
-    <footer>
-        <h2>
-            Created By Mritunjay Nigam
-        </h2>
-    </footer>
     <script src="script.js"></script>
-</body>
+    <footer>
+        Made By Mritunjay Nigam
+    </footer>
 
+</body>
 </html>

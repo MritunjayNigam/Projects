@@ -1,118 +1,54 @@
 
-async function dictionary() {
-
-    word = document.getElementById("word").value;
-    if(word === ""){
-        alert("Enter a word");
-        return;
-    } 
-    document.querySelector(".output").style.display="none"
-    document.querySelector(".welcome").style.display="none"
-    document.querySelector(".loading").style.display="flex"
-    // document.querySelector("a").style.display="flex"
+async function quotesGenerator(){
+    document.querySelector(".board").innerText = "Loading... Please Wait !🙂"
     
+    let num = document.querySelector(".container input").value
+    if(num==""){
+        alert("Enter any Number")
+    }
+    else if(num < 1 && num >1454){
+        alert("Enter a Number between 1-1450")
+    }
 
-    let url = `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`;
+    let url = `https://dummyjson.com/quotes/${num}` 
     let data = await fetch(url);
-    let res = await data.json();
-    console.log(res);
+    let report = await data.json();
+    console.log(report)
+
+    let quote = report.quote;
+    let aurthr =  report.author;
 
     
-    document.querySelector(".loading").style.display="none"
-    // document.querySelector("a").style.display="none"
+    document.querySelector(".board").innerText = `"${quote}"`
+    let p =document.createElement("p");  
+    p.innerText = `By - "${aurthr}"`;
+    document.querySelector(".board").appendChild(p);
+}
 
-    if (res[0]) {
+async function randomQuotesGenerator() {
+     document.querySelector(".board").innerText = "Loading... Please Wait !🙂"
 
-        document.querySelector(".output").style.display="block"
-        
+    let num = Math.floor(Math.random() * 1454) + 1;
+     
+    let url = `https://dummyjson.com/quotes/${num}` 
+    let data = await fetch(url);
+    let report = await data.json();
+    console.log(report)
 
-        // WORD
-        let w = res[0].word;
-        document.querySelector(".word").innerHTML = `Word : ${w}`;
+    let quote = report.quote;
+    let aurthr =  report.author;
 
-        // AUDIO
-        let audioSrc = res[0].phonetics[0].audio;
-        if (audioSrc) {
-            let audioElement = document.querySelector("audio");
-            document.querySelector("audio source").src = audioSrc;
-            audioElement.load();
-            console.log(audioSrc);
-
-            document.querySelector(".speach").addEventListener("click",()=>{
-                audioElement.play();
-            })
-
-        } else {
-            document.querySelector(".speach").style.display="none";
-            console.log("No audio available");
-        }
-
-
-        // URL
-
-        try {
-            let link = res[0]?.sourceUrls?.[0];
-            let anchor = document.querySelector("a");
-            anchor.href = link;
-        } catch (error) {
-            console.log("Error:", error);
-        }
-
-
-
-        // DEFINITION 
-
-        let d = res[0]?.meanings.flatMap(e => e.definitions.map(d => d.definition))
-        .filter(Boolean)
-        .sort(()=>Math.random() - 0.5)
-        .slice(0,4)
-        .map(def => `<li>${def}</li>`).join("")
-
-        document.querySelector(".definition").innerHTML = `<ol>${d}</ol>`
-
-        // console.log(res[0]?.meanings[0]?.definitions[0]?.definition || "Not Found");
-        // console.log(res[0]?.meanings[1]?.definitions[0]?.definition || "Not Found");
-        // console.log(res[0]?.meanings[2]?.definitions[0]?.definition || "Not Found");
-        // console.log(res[0]?.meanings[2]?.definitions[1]?.definition || "Not Found");
-        // console.log(res[0]?.meanings[2]?.definitions[2]?.definition || "Not Found");
-        // console.log(res[0]?.meanings[2]?.definitions[3]?.definition || "Not Found");
-
-        // EXAMPLES
-
-        let eg = res[0]?.meanings
-            .flatMap(m => m.definitions
-                .map(e => e.example))
-            .filter(Boolean)
-            .sort(()=>Math.random() - 0.5)
-            .slice(0,3)
-            .map(example => `<li>${example}</li>`)
-            .join("")
-
-        document.querySelector(".sentences").innerHTML = `<ol>${eg}</ol>`
-
-        // console.log(res[0]?.meanings[2]?.definitions[0]?.example || "Not Found");
-        // console.log(res[0]?.meanings[2]?.definitions[1]?.example || "Not Found");
-        // console.log(res[0]?.meanings[2]?.definitions[2]?.example || "Not Found");
-        // console.log(res[0]?.meanings[2]?.definitions[3]?.example || "Not Found");
-
-    }
-    else {
-        alert("Enter a valid world")
-        document.querySelector(".loading").style.display="none"
-        document.querySelector(".welcome").style.display="flex"
-    }
-
-
-
+    document.querySelector(".board").innerText = `"${quote}"`
+    let p =document.createElement("p");  
+    p.innerText = `By - "${aurthr}"`;
+    document.querySelector(".board").appendChild(p);
 
 }
 
-document.querySelector("button").addEventListener("click", () => {
-    dictionary()
-})
-document.querySelector("nav input").addEventListener("keydown", function(event){
-    if(event.key === "Enter"){
-        dictionary();
-    }
-})
+
+
+
+
+document.querySelector(".currentBtn").addEventListener("click", randomQuotesGenerator)
+document.querySelector(".btn").addEventListener("click", quotesGenerator)
 
