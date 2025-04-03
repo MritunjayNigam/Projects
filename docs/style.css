@@ -7,6 +7,30 @@ body {
     min-height: 500px;
 }
 
+.buttons {
+    margin: auto;
+    width: 90%;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 22px;
+}
+
+.currentBtn {
+    grid-area: btn1;
+    margin: auto !important;
+}
+
+.send {
+    grid-area: btn2;
+    margin: auto !important;
+}
+
+.buttons * {
+    margin: 0;
+    padding: 0;
+
+}
+
 nav h1 {
     width: max-content;
     margin: auto;
@@ -51,7 +75,6 @@ footer {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    overflow: scroll;
 }
 
 .container label {
@@ -123,9 +146,23 @@ footer {
     margin: auto;
 }
 
+.send {
+    width: max-content;
+    margin: auto;
+    padding: 12px 16px;
+    border-radius: 16px;
+    border: none;
+    box-shadow: 2px 2px 10px black;
+    background-color: darkgreen;
+    color: whitesmoke;
+    font-size: larger;
+    font-weight: 600;
+    display: none;
+}
+
 @media (max-width : 425px) {
 
-    body{
+    body {
         background-color: #ce89846c;
         gap: 0;
     }
@@ -140,7 +177,8 @@ footer {
             "button button"
             "bottom bottom";
     }
-    main{
+
+    main {
         min-height: 80vh;
         margin-bottom: 20px;
         background-color: #ce89843d;
@@ -193,7 +231,7 @@ footer {
         grid-area: bottom;
     }
 
-    nav{
+    nav {
         background-color: black;
         color: whitesmoke;
     }

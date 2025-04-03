@@ -35,6 +35,15 @@ async function quotesGenerator(){
     let p =document.createElement("p");  
     p.innerText = `By - "${aurthor}"`;
     board.appendChild(p);
+
+
+    let forward = document.querySelector(".send");
+    forward.style.display = "block"
+    let link = `https://wa.me/?text=${encodeURIComponent(`"${quote}"\n\nBy_ ${aurthor}`)}`;
+
+    forward.addEventListener("click", ()=>{
+        window.open(link,"_blank")
+    })
 }
 
 async function randomQuotesGenerator() {
@@ -65,6 +74,17 @@ async function randomQuotesGenerator() {
     let p =document.createElement("p");  
     p.innerText = `By - "${aurthor}"`;
     board.appendChild(p);
+
+
+
+    let forward = document.querySelector(".send");
+    forward.style.display = "block"
+    let link = `https://wa.me/?text=${encodeURIComponent(`"${quote}"\nBy_ ${aurthor}`)}`;
+
+    forward.addEventListener("click", ()=>{
+        window.open(link,"_blank")
+    })
+    
 
 }
 
