@@ -1,3 +1,24 @@
+.container {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.container textarea {
+    height: 150px;
+    width: 80%;
+    padding: 14px 10px;
+    font-size: 20px;
+    margin: auto;
+    border-radius: 20px;
+    resize: none;
+    outline: none;
+}
+
+#enterQuote::placeholder {
+    color: lightgreen;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -11,7 +32,7 @@ body {
     margin: auto;
     width: 90%;
     display: flex;
-    justify-content: space-around ;
+    justify-content: space-around;
     align-items: center;
     margin-top: 22px;
 }
@@ -160,14 +181,15 @@ footer {
     font-weight: 600;
     /* display: none; */
 }
-.buttons a{
-    display: none;
-}
-.container a{
+
+
+
+.container a {
     margin: auto;
-    display: block;
+    display: none;
     text-decoration: none;
 }
+
 @media (max-width : 425px) {
 
     body {
@@ -179,18 +201,16 @@ footer {
         width: 100%;
         margin: 20px 0;
         padding: 0;
-        display: grid;
-        gap: 10px;
-        grid-template-areas: "label input"
-            "button own"
-            "bottom bottom";
+        display: flex;
+        gap: 15px;
     }
 
-    .own{
+    .own {
         height: 100%;
         background: #1e3b8ae5;
         color: whitesmoke;
-        width: 70%;
+        width: 50%;
+        height: 50px;
         margin: auto;
         display: block;
         padding: 0 20px;
@@ -202,7 +222,7 @@ footer {
         border: none;
         box-shadow: 1px 2px 5px black;
     }
-    
+
     .btn {
         height: 100%;
         background: #1e3b8ae5;
@@ -223,15 +243,15 @@ footer {
         margin-bottom: 20px;
         background-color: #ce89843d;
     }
-    
+
     .container input {
         width: 85%;
         height: 38px;
         grid-area: input;
         margin: auto;
-        display: block;
     }
-    .buttons{
+
+    .buttons {
         width: 300px;
     }
 

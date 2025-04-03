@@ -6,7 +6,7 @@ async function quotesGenerator(){
         alert("Enter Quote Number")
         return
     }
-    else if(num < 1 || num >1454){
+    else if(num < 1 || num > 1454){
         alert("Enter a positive number till 1454")
         return
     }
@@ -92,5 +92,8 @@ document.querySelector(".container input")
         quotesGenerator()
     }
 })
+
+
+    
 
 
