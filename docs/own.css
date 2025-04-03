@@ -186,6 +186,7 @@ footer {
 
 .container a {
     margin: auto;
+    margin-bottom: 20px;
     display: none;
     text-decoration: none;
 }
@@ -193,12 +194,13 @@ footer {
 @media (max-width : 425px) {
 
     body {
+        height: 100vw;
         background-color: #ce89846c;
         gap: 0;
     }
 
     .container {
-        width: 100%;
+        min-width: 100%;
         margin: 20px 0;
         padding: 0;
         display: flex;
