@@ -47,6 +47,8 @@ async function randomQuotesGenerator() {
     let report = await data.json();
     console.log(report);
 
+    num = document.querySelector(".container input").value="";
+
     let quote = report.quote;
     let aurthor =  report.author;
     let quoteID = report.id;
