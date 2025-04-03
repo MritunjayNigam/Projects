@@ -40,7 +40,7 @@ async function quotesGenerator(){
     //WHATSAPP LINK
     let forward = document.querySelector(".buttons a");
     forward.style.display = "block"
-    forward.href = `https://wa.me/?text=${encodeURIComponent(`"${quote}"\nBy_ ${aurthor}`)}`;
+    forward.href = `https://wa.me/?text=${encodeURIComponent(`"${quote}"\n\nBy_ ${aurthor}`)}`;
 
 }
 
@@ -76,7 +76,7 @@ async function randomQuotesGenerator() {
     //WHATSAPP LINK
     let forward = document.querySelector(".buttons a");
     forward.style.display = "block"
-    forward.href = `https://wa.me/?text=${encodeURIComponent(`"${quote}"\nBy_ ${aurthor}`)}`;
+    forward.href = `https://wa.me/?text=${encodeURIComponent(`"${quote}"\n\nBy_ ${aurthor}`)}`;
     
 }
 
