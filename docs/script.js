@@ -1,14 +1,17 @@
 
 async function quotesGenerator(){
-    document.querySelector(".board").innerText = "Loading... Please Wait !🙂"
     
     let num = document.querySelector(".container input").value
     if(num==""){
-        alert("Enter any Number")
+        alert("Enter Quote Number")
+        return
     }
-    else if(num < 1 && num >1454){
-        alert("Enter a Number between 1-1450")
+    else if(num < 1 || num >1454){
+        alert("Enter a positive number till 1450")
+        return
     }
+
+    document.querySelector(".board").innerText = "Loading... Please Wait !🙂"
 
     let url = `https://dummyjson.com/quotes/${num}` 
     let data = await fetch(url);
@@ -42,7 +45,7 @@ async function randomQuotesGenerator() {
     let url = `https://dummyjson.com/quotes/${num}` 
     let data = await fetch(url);
     let report = await data.json();
-    console.log(report)
+    console.log(report);
 
     let quote = report.quote;
     let aurthor =  report.author;
@@ -63,10 +66,11 @@ async function randomQuotesGenerator() {
 
 }
 
-
-
-
-
 document.querySelector(".currentBtn").addEventListener("click", randomQuotesGenerator)
 document.querySelector(".btn").addEventListener("click", quotesGenerator)
+document.querySelector("nav h1").addEventListener("click", ()=>{
+    // window.location.href="index.html" OR
+    location.reload()
+})
+
 

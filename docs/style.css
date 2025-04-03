@@ -3,7 +3,7 @@
     padding: 0;
 }
 
-body{
+body {
     min-height: 500px;
 }
 
@@ -19,11 +19,11 @@ nav {
     display: flex;
     background-color: #1e3b8ae5;
     height: 90px;
-    box-shadow: 5px 4px 6px black;
+    box-shadow: 0px 5px 20px black;
 }
 
 main {
-    min-height: 80vh;
+    height: 80vh;
     background-color: #F3F4F6;
     overflow: hidden;
 }
@@ -32,7 +32,7 @@ footer {
     height: 80px;
     width: 100%;
     background-color: black;
-    position: absolute;
+    position: relative;
     bottom: 0;
     color: whitesmoke;
     font-size: 25px;
@@ -43,7 +43,7 @@ footer {
 
 .container {
     width: 60%;
-    height: 380px;
+    min-height: 415px;
     /* border: 1px solid black; */
     margin: auto;
     margin-top: 80px;
@@ -51,6 +51,7 @@ footer {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    overflow: scroll;
 }
 
 .container label {
@@ -89,12 +90,23 @@ footer {
 .currentBtn {
     margin: auto;
     display: block;
+    height: 36px;
+    width: max-content;
+    padding: 0 30px;
+    border-radius: 14px;
+    text-align: center;
+    background: linear-gradient(45deg, rgba(0, 0, 255, 0.616), rgba(0, 255, 0, 0.432));
+    color: purple;
+    font-size: 23px;
+    font-weight: 800;
+    border: none;
+    box-shadow: 2px 2px 6px black;
 }
 
 .board {
     width: 557px;
-    height: 213px;
-    border: 17px solid #A0522D;
+    min-height: 213px;
+    border: 17px solid #cc8580;
     border-radius: 34px;
     background-color: black;
     color: whitesmoke;
@@ -102,6 +114,8 @@ footer {
     flex-direction: column;
     gap: 22px;
     align-items: center;
+    text-align: center;
+    line-height: 30px;
     justify-content: center;
     font-size: 21px;
     font-family: cursive;
@@ -110,34 +124,45 @@ footer {
 }
 
 @media (max-width : 425px) {
+
+    body{
+        background-color: #ce89846c;
+        gap: 0;
+    }
+
     .container {
         width: 100%;
         margin: 20px 0;
         padding: 0;
         display: grid;
-        gap: 18px;
-        grid-template-areas: "label label button"
-            "input input button"
-            "bottom bottom bottom";
+        gap: 10px;
+        grid-template-areas: "label input"
+            "button button"
+            "bottom bottom";
+    }
+    main{
+        min-height: 80vh;
+        margin-bottom: 20px;
+        background-color: #ce89843d;
     }
 
     .container input {
         width: 85%;
         height: 38px;
         grid-area: input;
-        margin-left: auto;
+        margin: auto;
     }
 
     .btn {
-        height: 85%;
-        background: linear-gradient(45deg, rgba(0, 0, 255, 0.616), rgba(0, 255, 0, 0.432));
-        width: 90%;
-        margin-right: auto;
+        height: 100%;
+        background: #1e3b8ae5;
+        color: whitesmoke;
+        width: 80%;
+        margin: auto;
         padding: 0 20px;
         grid-area: button;
-        grid-row-end: 3;
-        grid-row-start: 1;
-        font-size: 30px;
+        font-size: 35px;
+        font-weight: 800;
     }
 
     .currentBtn {
@@ -146,8 +171,8 @@ footer {
         padding: 0 30px;
         border-radius: 14px;
         text-align: center;
-        background: linear-gradient(45deg, rgba(0, 0, 255, 0.616), rgba(0, 255, 0, 0.432));
-        color: purple;
+        background: #1e3b8ae5;
+        color: whitesmoke;
         font-size: 23px;
         font-weight: 800;
         border: none;
@@ -158,7 +183,7 @@ footer {
     .container label {
         font-size: 28px;
         grid-area: label;
-        margin-left: auto;
+        margin: auto;
     }
 
     .board {
@@ -166,5 +191,19 @@ footer {
         grid-column-start: 1;
         grid-column-end: -1;
         grid-area: bottom;
+    }
+
+    nav{
+        background-color: black;
+        color: whitesmoke;
+    }
+
+    footer {
+        font-size: 18px;
+        height: fit-content;
+        padding: 15px 0;
+        position: fixed;
+        background-color: black;
+        color: whitesmoke;
     }
 }
