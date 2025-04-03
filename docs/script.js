@@ -72,5 +72,11 @@ document.querySelector("nav h1").addEventListener("click", ()=>{
     // window.location.href="index.html" OR
     location.reload()
 })
+document.querySelector(".container input")
+.addEventListener("keydown",(event)=>{
+    if(event.key === "Enter"){
+        quotesGenerator()
+    }
+})
 
 
