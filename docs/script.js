@@ -37,13 +37,11 @@ async function quotesGenerator(){
     board.appendChild(p);
 
 
-    let forward = document.querySelector(".send");
+    //WHATSAPP LINK
+    let forward = document.querySelector(".buttons a");
     forward.style.display = "block"
-    let link = `https://wa.me/?text=${encodeURIComponent(`"${quote}"\n\nBy_ ${aurthor}`)}`;
+    forward.href = `https://wa.me/?text=${encodeURIComponent(`"${quote}"\nBy_ ${aurthor}`)}`;
 
-    forward.addEventListener("click", ()=>{
-        window.open(link,"_blank")
-    })
 }
 
 async function randomQuotesGenerator() {
@@ -75,17 +73,11 @@ async function randomQuotesGenerator() {
     p.innerText = `By - "${aurthor}"`;
     board.appendChild(p);
 
-
-
-    let forward = document.querySelector(".send");
+    //WHATSAPP LINK
+    let forward = document.querySelector(".buttons a");
     forward.style.display = "block"
-    let link = `https://wa.me/?text=${encodeURIComponent(`"${quote}"\nBy_ ${aurthor}`)}`;
-
-    forward.addEventListener("click", ()=>{
-        window.open(link,"_blank")
-    })
+    forward.href = `https://wa.me/?text=${encodeURIComponent(`"${quote}"\nBy_ ${aurthor}`)}`;
     
-
 }
 
 document.querySelector(".currentBtn").addEventListener("click", randomQuotesGenerator)

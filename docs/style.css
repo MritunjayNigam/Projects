@@ -157,6 +157,9 @@ footer {
     color: whitesmoke;
     font-size: larger;
     font-weight: 600;
+    /* display: none; */
+}
+.buttons a{
     display: none;
 }
 
