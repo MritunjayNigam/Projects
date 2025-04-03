@@ -7,7 +7,7 @@ async function quotesGenerator(){
         return
     }
     else if(num < 1 || num >1454){
-        alert("Enter a positive number till 1450")
+        alert("Enter a positive number till 1454")
         return
     }
 
