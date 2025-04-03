@@ -40,14 +40,14 @@ async function quotesGenerator(){
 async function randomQuotesGenerator() {
      document.querySelector(".board").innerText = "Loading... Please Wait !🙂"
 
-    let num = Math.floor(Math.random() * 1454) + 1;
+    let num = document.querySelector(".container input").value="";
+    num = Math.floor(Math.random() * 1454) + 1;
      
     let url = `https://dummyjson.com/quotes/${num}` 
     let data = await fetch(url);
     let report = await data.json();
     console.log(report);
 
-    num = document.querySelector(".container input").value="";
 
     let quote = report.quote;
     let aurthor =  report.author;
