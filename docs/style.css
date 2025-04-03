@@ -11,7 +11,8 @@ body {
     margin: auto;
     width: 90%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-around ;
+    align-items: center;
     margin-top: 22px;
 }
 
@@ -193,6 +194,9 @@ footer {
         grid-area: input;
         margin: auto;
     }
+    .buttons{
+        width: 300px;
+    }
 
     .btn {
         height: 100%;
@@ -208,7 +212,7 @@ footer {
 
     .currentBtn {
         height: 55px;
-        width: 180px;
+        width: 140px;
         padding: 0px 5px;
         border-radius: 14px;
         text-align: center;
