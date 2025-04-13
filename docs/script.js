@@ -1,99 +1,64 @@
+//DECLARATION
+let image = document.querySelector(".container img");
+let box = document.querySelector(".container");
+let refresh = document.querySelector(".fa-rotate-right");
+let target = document.querySelector(".container input");
 
-async function quotesGenerator(){
+//REFRESH
+refresh.addEventListener("click", () => {
     
-    let num = document.querySelector(".container input").value
-    if(num==""){
-        alert("Enter Quote Number")
-        return
-    }
-    else if(num < 1 || num > 1454){
-        alert("Enter a positive number till 1454")
-        return
-    }
-
-    document.querySelector(".board").innerText = "Loading... Please Wait !🙂"
-
-    let url = `https://dummyjson.com/quotes/${num}` 
-    let data = await fetch(url);
-    let report = await data.json();
-    console.log(report)
-
-    let quote = report.quote;
-    let aurthor =  report.author;
-    let quoteID = report.id;
-
-
-    let board = document.querySelector(".board");
-    //ID
-    board.innerHTML = `Quote ID :${quoteID}`;
-      
-    //QUOTE
-    let qu = document.createElement("p");
-    qu.innerText = `"${quote}"`
-    board.appendChild(qu) 
-    //AUTTHOR
-    let p =document.createElement("p");  
-    p.innerText = `By - "${aurthor}"`;
-    board.appendChild(p);
-
-
-    //WHATSAPP LINK
-    let forward = document.querySelector(".buttons a");
-    forward.style.display = "block"
-    forward.href = `https://wa.me/?text=${encodeURIComponent(`"${quote}"\n\nBy_ ${aurthor}`)}`;
-
-}
-
-async function randomQuotesGenerator() {
-     document.querySelector(".board").innerText = "Loading... Please Wait !🙂"
-
-    let num = document.querySelector(".container input").value="";
-    num = Math.floor(Math.random() * 1454) + 1;
-     
-    let url = `https://dummyjson.com/quotes/${num}` 
-    let data = await fetch(url);
-    let report = await data.json();
-    console.log(report);
-
-
-    let quote = report.quote;
-    let aurthor =  report.author;
-    let quoteID = report.id;
-
-    let board = document.querySelector(".board");
-    //ID
-    board.innerHTML = `Quote ID :${quoteID}`;
-      
-    //QUOTE
-    let qu = document.createElement("p");
-    qu.innerText = `"${quote}"`
-    board.appendChild(qu) 
-    //AUTTHOR
-    let p =document.createElement("p");  
-    p.innerText = `By - "${aurthor}"`;
-    board.appendChild(p);
-
-    //WHATSAPP LINK
-    let forward = document.querySelector(".buttons a");
-    forward.style.display = "block"
-    forward.href = `https://wa.me/?text=${encodeURIComponent(`"${quote}"\n\nBy_ ${aurthor}`)}`;
+    refresh.classList.add("rotate")
+    setTimeout(()=>{
+        refresh.classList.remove("rotate")
+    }, 500);
     
-}
-
-document.querySelector(".currentBtn").addEventListener("click", randomQuotesGenerator)
-document.querySelector(".btn").addEventListener("click", quotesGenerator)
-document.querySelector("nav h1").addEventListener("click", ()=>{
-    // window.location.href="index.html" OR
-    location.reload()
-})
-document.querySelector(".container input")
-.addEventListener("keydown",(event)=>{
-    if(event.key === "Enter"){
-        quotesGenerator()
+    if (window.innerWidth <= 425) {
+        box.style.height = "150px"
+    } else {
+        box.style.height = "144px"
     }
+    
+    image.style.display = "none";
+    
+    target.value = "";
+    
 })
 
 
-    
+//MAIN
+async function genereteQR() {
+    let target = document.querySelector(".container input").value;
+    if (target == "") {
+        alert("Box Khali Na Chordo!")
+        return
+    }
+
+    let url = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${target}`
+
+    image.src = url
+
+    async function setHeight() {
+        await new Promise(resolve => {
+            if (window.innerWidth <= 425) {
+                box.style.height = "380px"
+            } else {
+                box.style.height = "374px"
+            }
+            setTimeout(resolve, 500)
+        });
+    }
+    await setHeight()
+
+    image.style.display = "block"
+}
 
 
+//CALLING
+document.querySelector(".btn").addEventListener("click", () => {
+    genereteQR()
+})
+target.addEventListener("keydown", (e)=>{
+    if(e.key === "Enter"){
+        genereteQR()
+    }
+})

@@ -3,33 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quotes</title>
+    <title>QR Generator</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/39e06da2a5.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <nav>
-        <h1>Quotes Generetor</h1>
-    </nav>
-
-    <main>
-        <div class="container">
-            <label>Quote Number </label>
-            <input type="number" placeholder="QuoteID till 1454">
-            <button class="btn">Submit</button>
-            <a href="own.html"><button class="own">Make Your Own</button></a>
-            <div class="board">Your Quote Will Apear Here !🙂😊 Contains 1454 Quotes</div>
+    <div class="container">
+        <label>Enter your text or URL</label>
+        <input id="demand" placeholder="Text or URL">
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://www.google.com/" alt="code">
+        <div>
+            <button class="btn">Generate QR Code</button>
+            <i class="fa-solid fa-rotate-right fa-2xl"></i>
         </div>
-        <div class="buttons">
-            <button class="currentBtn">Generate Random</button>
-            <a href="" target="_blank"><button class="send">💬 Forward</button></a>
-        </div>
-    </main>
+    </div>
     <script src="script.js"></script>
-    <footer>
-        <marquee behavior="" direction="">
-            Made By Mritunjay Nigam
-        </marquee>
-    </footer>
-
 </body>
 </html>
