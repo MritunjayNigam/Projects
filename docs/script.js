@@ -6,22 +6,22 @@ let target = document.querySelector(".container input");
 
 //REFRESH
 refresh.addEventListener("click", () => {
-    
+
     refresh.classList.add("rotate")
-    setTimeout(()=>{
+    setTimeout(() => {
         refresh.classList.remove("rotate")
     }, 500);
-    
+
     if (window.innerWidth <= 425) {
         box.style.height = "150px"
     } else {
         box.style.height = "144px"
     }
-    
+
     image.style.display = "none";
-    
+
     target.value = "";
-    
+
 })
 
 
@@ -57,8 +57,21 @@ async function genereteQR() {
 document.querySelector(".btn").addEventListener("click", () => {
     genereteQR()
 })
-target.addEventListener("keydown", (e)=>{
-    if(e.key === "Enter"){
+target.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") {
         genereteQR()
     }
 })
+
+//MOUSE DOWN
+document.querySelector(".btn").addEventListener("mousedown", (e) => {
+    let b = document.querySelector(".btn");
+    b.style.background ="black";
+    b.style.color ="#ccda4f"; 
+});
+document.querySelector(".btn").addEventListener("mouseup", (e) => {
+    let b = document.querySelector(".btn");
+    b.style.background ="#313896";
+    b.style.color ="white"; 
+});
+

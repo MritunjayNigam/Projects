@@ -75,11 +75,6 @@ body {
     box-shadow: 2px 2px 10px black;
 }
 
-.container button:hover{
-    background-color: black;
-    color: white;
-}
-
 .container img {
     height: 200px;
     width: 200px;
